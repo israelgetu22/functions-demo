@@ -22,3 +22,41 @@ let newWinnerSplit = newWinnerLower.split(" ");
 console.log(newWinnerSplit);
 let newWinnerKebob = newWinnerSplit.join("-");
 console.log(newWinnerKebob);
+
+//Write a function we can call to determine if Jon Snow is alive.
+
+function isJonAlive() {
+  if (jonSnowHealth > 0) {
+    console.log("Jon is alive!");
+  } else {
+    console.log("RIP in Peace Jon Snow!");
+    console.log(`Her health is ${jonSonwHealth}`);
+  }
+}
+
+isJonAlive();
+
+//write a function to have Jon Snow be attacked
+//after invoking this function a few times, and then invoking isJonAlive, move isJonAlive into surpriseAttack so we only need to make one function call
+
+function surpriseAttack(attack) {
+  jonSnowHealth -= attack;
+  // isJonAlive()
+}
+
+surpriseAttack(20);
+isJonAlive();
+surpriseAttack(10);
+surpriseAttack(30);
+surpriseAttack(25);
+surpriseAttack(15);
+
+function greeting(person1, person2) {
+  console.log(`${person1} says hello to ${person2}.`);
+}
+
+greeting("Jon Snow", "Ned Stark");
+
+//demonstrate what happens when we mass more or fewer arguments than parameters
+greeting("Spencer", "Andrew", "Adrian");
+greeting("Spencer");

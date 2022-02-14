@@ -60,3 +60,31 @@ greeting("Jon Snow", "Ned Stark");
 //demonstrate what happens when we mass more or fewer arguments than parameters
 greeting("Spencer", "Andrew", "Adrian");
 greeting("Spencer");
+
+//demonstrate function returns
+
+function rollDie() {
+  let sides = [1, 2, 3, 4, 5, 6];
+  let randomNumber = Math.floor(Math.random() * sides.length);
+  return sides[randomNumber];
+}
+
+let firstRoll = rollDie();
+let secondRoll = rollDie();
+console.log(firstRoll, secondRoll);
+
+function rollDice(number) {
+  let rolls = [];
+  let total = 0;
+  for (let i = 0; i < number; i++) {
+    rolls.push(rollDie());
+  }
+  for (let i = 0; i < rolls.length; i++) {
+    total += rolls[i];
+  }
+  return total;
+}
+
+let attackRoll = rollDice(4);
+let defenseRoll = rollDice(4);
+console.log(attackRoll - defenseRoll);
